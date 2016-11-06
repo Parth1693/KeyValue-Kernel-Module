@@ -1,0 +1,17 @@
+Steps:
+
+1. Make Driver (in kernel_module)
+	a) sudo make
+	b) mkdir /usr/local/include/keyvalue
+	c) sudo make install
+	d) sudo insmod keyvalue.ko 
+
+2. Maker Library (in library)
+	a) sudo make all
+	b) sudo make install
+
+3. Make App (in benchmark)
+	a) export LD_LIBRARY_PATH = /usr/local/lib/
+	b) sudo make all
+	c) sudo ldconfig
+	d) sudo ./benchmark 64 64
